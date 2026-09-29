@@ -1,0 +1,319 @@
+Options -Indexes
+RewriteEngine On
+
+# ── HTTP → HTTPS canonical redirect ──────────────────────────────────────
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L,NE]
+
+# ── www → non-www canonical redirect ─────────────────────────────────────
+RewriteCond %{HTTP_HOST} ^www\.millicars\.az$ [NC]
+RewriteRule ^(.*)$ https://millicars.az/$1 [R=301,L]
+
+# ── Old ?lang= parameter URLs (pre-multilang migration) ──────────────────
+RewriteCond %{QUERY_STRING} ^lang=ru(&|$)
+RewriteRule ^$ /ru/ [R=301,L]
+RewriteCond %{QUERY_STRING} ^lang=en(&|$)
+RewriteRule ^$ /en/ [R=301,L]
+RewriteCond %{QUERY_STRING} ^lang=az(&|$)
+RewriteRule ^$ /az/ [R=301,L]
+RewriteCond %{QUERY_STRING} ^lang=
+RewriteRule ^$ /en/ [R=301,L]
+
+
+# ── Block Cloudflare email-protection (not our pages) ─────────────────────
+RewriteRule ^cdn-cgi/ - [F,L]
+
+# ── Short car URLs without /cars/ subfolder → correct path ───────────────
+RewriteRule ^(ru|en|az)/(byd-destroyer|chevrolet-aveo|chevrolet-cobalt|chevrolet-spark|hyundai-accent|hyundai-creta|hyundai-elantra|hyundai-sonata|hyundai-staria|hyundai-tucson|hyundai-venue|kia-cerato|kia-rio|kia-sportage|mercedes-e-class|mercedes-vito|skoda-rapid|suzuki-swift|toyota-camry|toyota-corolla|toyota-rav4)/?$ /$1/cars/$2.html [R=301,L]
+
+# ── Car URLs with -baku suffix → correct path ─────────────────────────────
+RewriteRule ^(ru|en|az)/(byd-destroyer|chevrolet-aveo|chevrolet-cobalt|chevrolet-spark|hyundai-accent|hyundai-creta|hyundai-elantra|hyundai-sonata|hyundai-staria|hyundai-tucson|hyundai-venue|kia-cerato|kia-rio|kia-sportage|mercedes-e-class|mercedes-vito|skoda-rapid|suzuki-swift|toyota-camry|toyota-corolla|toyota-rav4)-baku\.html$ /$1/cars/$2.html [R=301,L]
+
+# ── Old root-level pages (pre-multilang structure) → /ru/ ─────────────────
+Redirect 301 /about.html          /ru/about.html
+Redirect 301 /booking.html        /ru/booking.html
+Redirect 301 /car-eclass.html     /ru/cars/mercedes-e-class.html
+Redirect 301 /car-prado.html      /ru/cars.html
+Redirect 301 /cars.html           /ru/cars.html
+Redirect 301 /contacts.html       /ru/contacts.html
+Redirect 301 /corporate.html      /ru/corporate.html
+Redirect 301 /how-it-works.html   /ru/how-it-works.html
+Redirect 301 /prices.html         /ru/cars.html
+Redirect 301 /reviews.html        /ru/reviews.html
+Redirect 301 /terms.html          /ru/terms.html
+
+# ── Consolidated commercial intent: refundable deposit policy ─────────────
+Redirect 301 /ru/car-rental-without-deposit-baku.html /ru/terms.html
+Redirect 301 /en/car-rental-without-deposit-baku.html /en/terms.html
+Redirect 301 /az/car-rental-without-deposit-baku.html /az/terms.html
+
+# ── catalog.html → cars.html (EN/AZ) ─────────────────────────────────────
+Redirect 301 /en/catalog.html     /en/cars.html
+Redirect 301 /az/catalog.html     /az/cars.html
+
+# ── routes-azerbaijan.html → routes.html ─────────────────────────────────
+Redirect 301 /ru/routes-azerbaijan.html  /ru/routes.html
+
+# ── Old /en/news/ pages → EN homepage ─────────────────────────────────────
+RedirectMatch 301 ^/en/news/.*$   /en/
+
+# ── EN blog: renamed articles ──────────────────────────────────────────────
+Redirect 301 /en/blog/road-trips-azerbaijan.html           /en/blog/road-trips-in-azerbaijan.html
+Redirect 301 /en/blog/driving-rules-azerbaijan.html        /en/blog/driving-rules-in-azerbaijan.html
+Redirect 301 /en/blog/how-to-rent-car-in-baku.html         /en/blog/how-to-rent-a-car-in-baku.html
+Redirect 301 /en/blog/airport-car-rental-guide-baku.html   /en/blog/car-rental-at-baku-airport.html
+
+# ── EN blog: wrong-language slugs in EN folder ────────────────────────────
+Redirect 301 /en/blog/arenda-avto-v-aeroportu-baku.html    /en/blog/car-rental-at-baku-airport.html
+Redirect 301 /en/blog/kak-arendovat-avto-v-baku.html       /en/blog/how-to-rent-a-car-in-baku.html
+Redirect 301 /en/blog/azerbaycanda-suruculuk-qaydalari.html /en/blog/driving-rules-in-azerbaijan.html
+Redirect 301 /en/blog/hava-limaninda-avtomobil-icaresi.html /en/blog/car-rental-at-baku-airport.html
+Redirect 301 /en/blog/azerbaycan-seyahetleri.html           /en/blog/road-trips-in-azerbaijan.html
+Redirect 301 /en/blog/bakida-avtomobil-icaresi.html         /en/blog/how-to-rent-a-car-in-baku.html
+Redirect 301 /en/blog/pravila-vozhdeniya-v-azerbajdzhane.html /en/blog/driving-rules-in-azerbaijan.html
+Redirect 301 /en/blog/sovety-turistam-baku.html             /en/blog/travel-tips-baku.html
+Redirect 301 /en/blog/baki-turistler-ucun-meslehetler.html  /en/blog/travel-tips-baku.html
+Redirect 301 /en/blog/poezdki-po-azerbajdzhanu.html         /en/blog/road-trips-in-azerbaijan.html
+
+# ── RU blog: wrong-language slugs in RU folder ────────────────────────────
+Redirect 301 /ru/blog/bakida-avtomobil-icaresi.html         /ru/blog/kak-arendovat-avto-v-baku.html
+Redirect 301 /ru/blog/azerbaycanda-suruculuk-qaydalari.html /ru/blog/pravila-vozhdeniya-v-azerbajdzhane.html
+Redirect 301 /ru/blog/baki-turistler-ucun-meslehetler.html  /ru/blog/sovety-turistam-baku.html
+Redirect 301 /ru/blog/how-to-rent-car-in-baku.html          /ru/blog/kak-arendovat-avto-v-baku.html
+Redirect 301 /ru/blog/driving-rules-azerbaijan.html         /ru/blog/pravila-vozhdeniya-v-azerbajdzhane.html
+Redirect 301 /ru/blog/airport-car-rental-guide-baku.html    /ru/blog/arenda-avto-v-aeroportu-baku.html
+Redirect 301 /ru/blog/road-trips-azerbaijan.html            /ru/blog/poezdki-po-azerbajdzhanu.html
+Redirect 301 /ru/blog/azerbaycan-seyahetleri.html           /ru/blog/poezdki-po-azerbajdzhanu.html
+Redirect 301 /ru/blog/travel-tips-baku.html                 /ru/blog/sovety-turistam-baku.html
+Redirect 301 /ru/blog/hava-limaninda-avtomobil-icaresi.html /ru/blog/arenda-avto-v-aeroportu-baku.html
+
+# ── AZ blog: non-existent articles → blog index ──────────────────────────
+Redirect 301 /az/blog/gabala-road-trip.html                  /az/blog/
+Redirect 301 /az/blog/is-it-safe-to-drive-in-baku.html      /az/blog/
+Redirect 301 /az/blog/baku-to-tbilisi-by-car.html           /az/blog/
+Redirect 301 /az/blog/azerbaijan-road-trip-planner.html     /az/blog/
+
+# ── EN blog: non-existent articles → blog index ──────────────────────────
+Redirect 301 /en/blog/car-hire-vs-taxi-baku.html            /en/blog/
+Redirect 301 /en/blog/azerbaijan-road-trip-planner.html     /en/blog/
+
+# ── RU blog: non-existent articles → blog index ──────────────────────────
+Redirect 301 /ru/blog/platnyye-dorogi-azerbaydzhan.html     /ru/blog/
+
+# ── AZ blog: renamed articles ─────────────────────────────────────────────
+Redirect 301 /az/blog/azerbaycan-seyahetleri.html           /az/blog/azerbaycanda-seyahet.html
+Redirect 301 /az/blog/bakida-avtomobil-icaresi.html         /az/blog/baki-avto-icaresi-rehber.html
+Redirect 301 /az/blog/hava-limaninda-avtomobil-icaresi.html /az/blog/baki-hava-limaninda-icare.html
+
+# ── AZ blog: wrong-language slugs in AZ folder ────────────────────────────
+Redirect 301 /az/blog/pravila-vozhdeniya-v-azerbajdzhane.html /az/blog/azerbaycanda-suruculuk-qaydalari.html
+Redirect 301 /az/blog/driving-rules-azerbaijan.html          /az/blog/azerbaycanda-suruculuk-qaydalari.html
+Redirect 301 /az/blog/airport-car-rental-guide-baku.html     /az/blog/baki-hava-limaninda-icare.html
+Redirect 301 /az/blog/how-to-rent-car-in-baku.html           /az/blog/baki-avto-icaresi-rehber.html
+Redirect 301 /az/blog/road-trips-azerbaijan.html             /az/blog/azerbaycanda-seyahet.html
+Redirect 301 /az/blog/travel-tips-baku.html                  /az/blog/baki-turistler-ucun-meslehetler.html
+Redirect 301 /az/blog/kak-arendovat-avto-v-baku.html         /az/blog/baki-avto-icaresi-rehber.html
+Redirect 301 /az/blog/sovety-turistam-baku.html              /az/blog/baki-turistler-ucun-meslehetler.html
+Redirect 301 /az/blog/poezdki-po-azerbajdzhanu.html          /az/blog/azerbaycanda-seyahet.html
+Redirect 301 /az/blog/arenda-avto-v-aeroportu-baku.html      /az/blog/baki-hava-limaninda-icare.html
+# EN-slugs in AZ folder
+Redirect 301 /az/blog/car-insurance-azerbaijan.html          /az/blog/azerbaycan-avto-sigortasi.html
+Redirect 301 /az/blog/azerbaijan-fuel-prices.html            /az/blog/azerbaycan-yanacaq-rehberi.html
+Redirect 301 /az/blog/fuel-guide-azerbaijan.html             /az/blog/azerbaycan-yanacaq-rehberi.html
+Redirect 301 /az/blog/traffic-fines-azerbaijan.html          /az/blog/azerbaycan-cerimeleri.html
+Redirect 301 /az/blog/international-driving-permit-azerbaijan.html /az/blog/beynelxalq-suruculuk-vesiqesi.html
+Redirect 301 /az/blog/best-car-for-baku.html                 /az/blog/baki-ucun-en-yaxsi-avto.html
+# RU-slugs in AZ folder
+Redirect 301 /az/blog/strahovka-avto-azerbajdzhan.html       /az/blog/azerbaycan-avto-sigortasi.html
+Redirect 301 /az/blog/toplivo-azerbajdzhan.html              /az/blog/azerbaycan-yanacaq-rehberi.html
+Redirect 301 /az/blog/shtrafy-pdd-azerbajdzhan.html          /az/blog/azerbaycan-cerimeleri.html
+Redirect 301 /az/blog/mezhdunarodnye-prava-azerbajdzhan.html /az/blog/beynelxalq-suruculuk-vesiqesi.html
+Redirect 301 /az/blog/kakoe-avto-vybrat-baku.html            /az/blog/baki-ucun-en-yaxsi-avto.html
+
+# ── RU blog: additional EN/AZ-slugs in RU folder ─────────────────────────
+# EN-slugs
+Redirect 301 /ru/blog/car-insurance-azerbaijan.html          /ru/blog/strahovka-avto-azerbajdzhan.html
+Redirect 301 /ru/blog/azerbaijan-fuel-prices.html            /ru/blog/toplivo-azerbajdzhan.html
+Redirect 301 /ru/blog/fuel-guide-azerbaijan.html             /ru/blog/toplivo-azerbajdzhan.html
+Redirect 301 /ru/blog/traffic-fines-azerbaijan.html          /ru/blog/shtrafy-pdd-azerbajdzhan.html
+Redirect 301 /ru/blog/international-driving-permit-azerbaijan.html /ru/blog/mezhdunarodnye-prava-azerbajdzhan.html
+Redirect 301 /ru/blog/best-car-for-baku.html                 /ru/blog/kakoe-avto-vybrat-baku.html
+# AZ-slugs
+Redirect 301 /ru/blog/azerbaycan-avto-sigortasi.html         /ru/blog/strahovka-avto-azerbajdzhan.html
+Redirect 301 /ru/blog/azerbaycan-yanacaq-rehberi.html        /ru/blog/toplivo-azerbajdzhan.html
+Redirect 301 /ru/blog/azerbaycan-cerimeleri.html             /ru/blog/shtrafy-pdd-azerbajdzhan.html
+Redirect 301 /ru/blog/beynelxalq-suruculuk-vesiqesi.html     /ru/blog/mezhdunarodnye-prava-azerbajdzhan.html
+Redirect 301 /ru/blog/baki-ucun-en-yaxsi-avto.html           /ru/blog/kakoe-avto-vybrat-baku.html
+
+# ── EN blog: additional AZ/RU-slugs in EN folder ─────────────────────────
+# AZ-slugs
+Redirect 301 /en/blog/azerbaycan-avto-sigortasi.html         /en/blog/car-insurance-azerbaijan.html
+Redirect 301 /en/blog/azerbaycan-yanacaq-rehberi.html        /en/blog/fuel-guide-azerbaijan.html
+Redirect 301 /en/blog/azerbaycan-cerimeleri.html             /en/blog/traffic-fines-azerbaijan.html
+Redirect 301 /en/blog/beynelxalq-suruculuk-vesiqesi.html     /en/blog/international-driving-permit-azerbaijan.html
+Redirect 301 /en/blog/baki-ucun-en-yaxsi-avto.html           /en/blog/best-car-for-baku.html
+# RU-slugs
+Redirect 301 /en/blog/strahovka-avto-azerbajdzhan.html       /en/blog/car-insurance-azerbaijan.html
+Redirect 301 /en/blog/toplivo-azerbajdzhan.html              /en/blog/fuel-guide-azerbaijan.html
+Redirect 301 /en/blog/shtrafy-pdd-azerbajdzhan.html          /en/blog/traffic-fines-azerbaijan.html
+Redirect 301 /en/blog/mezhdunarodnye-prava-azerbajdzhan.html /en/blog/international-driving-permit-azerbaijan.html
+Redirect 301 /en/blog/kakoe-avto-vybrat-baku.html            /en/blog/best-car-for-baku.html
+
+# ── 404 fix batch 2026-06-19 ─────────────────────────────────────────────
+
+# ── Legacy commercial and article URLs found in Search Console 404 export ──
+RewriteRule ^(ru|en|az)/(hyundai-elantra|chevrolet-cobalt|kia-rio|hyundai-venue)-rental-baku\.html$ /$1/cars/$2.html [R=301,L]
+RewriteRule ^(ru|en|az)/(daily|weekly)-car-rental-baku\.html$ /$1/booking.html [R=301,L]
+RewriteRule ^en/blog/(what-to-see-in-baku|car-rental-tips-tourists|when-to-visit-baku|parking-in-baku|old-city-baku-parking)\.html$ /en/blog/travel-tips-baku.html [R=301,L]
+RewriteRule ^az/blog/(what-to-see-in-baku|car-rental-tips-tourists|when-to-visit-baku|parking-in-baku|old-city-baku-parking)\.html$ /az/blog/baki-turistler-ucun-meslehetler.html [R=301,L]
+RewriteRule ^ru/blog/(what-to-see-in-baku|car-rental-tips-tourists|when-to-visit-baku|parking-in-baku|old-city-baku-parking)\.html$ /ru/blog/sovety-turistam-baku.html [R=301,L]
+RewriteRule ^en/blog/car-rental-baku-faq\.html$ /en/faq.html [R=301,L]
+RewriteRule ^az/blog/car-rental-baku-faq\.html$ /az/faq.html [R=301,L]
+RewriteRule ^ru/blog/car-rental-baku-faq\.html$ /ru/faq.html [R=301,L]
+RewriteRule ^en/blog/(gabala-road-trip|sheki-road-trip|shamakhi-day-trip|baku-day-trips-by-car|guba-road-trip|lankaran-road-trip|travel-azerbaijan-by-car)\.html$ /en/blog/road-trips-in-azerbaijan.html [R=301,L]
+RewriteRule ^az/blog/(gabala-road-trip|sheki-road-trip|shamakhi-day-trip|baku-day-trips-by-car|guba-road-trip|lankaran-road-trip|travel-azerbaijan-by-car)\.html$ /az/blog/azerbaycanda-seyahet.html [R=301,L]
+RewriteRule ^ru/blog/(gabala-road-trip|sheki-road-trip|shamakhi-day-trip|baku-day-trips-by-car|guba-road-trip|lankaran-road-trip|travel-azerbaijan-by-car)\.html$ /ru/blog/poezdki-po-azerbajdzhanu.html [R=301,L]
+RewriteRule ^en/blog/(self-drive-azerbaijan|car-hire-vs-taxi-baku|economy-vs-suv-baku|mountain-roads-azerbaijan|winter-driving-azerbaijan|baku-traffic-guide|azerbaijan-road-conditions)\.html$ /en/blog/driving-rules-in-azerbaijan.html [R=301,L]
+RewriteRule ^az/blog/(self-drive-azerbaijan|car-hire-vs-taxi-baku|economy-vs-suv-baku|mountain-roads-azerbaijan|winter-driving-azerbaijan|baku-traffic-guide|azerbaijan-road-conditions)\.html$ /az/blog/azerbaycanda-suruculuk-qaydalari.html [R=301,L]
+RewriteRule ^ru/blog/(self-drive-azerbaijan|car-hire-vs-taxi-baku|economy-vs-suv-baku|mountain-roads-azerbaijan|winter-driving-azerbaijan|baku-traffic-guide|azerbaijan-road-conditions)\.html$ /ru/blog/pravila-vozhdeniya-v-azerbajdzhane.html [R=301,L]
+RewriteRule ^en/blog/azerbaijan-road-trip-planner\.html$ /en/blog/road-trips-in-azerbaijan.html [R=301,L]
+RewriteRule ^az/blog/azerbaijan-road-trip-planner\.html$ /az/blog/azerbaycanda-seyahet.html [R=301,L]
+RewriteRule ^ru/blog/azerbaijan-road-trip-planner\.html$ /ru/blog/poezdki-po-azerbajdzhanu.html [R=301,L]
+RewriteRule ^en/blog/(fuel-guide-azerbaijan|azerbaijan-fuel-prices)\.html$ /en/blog/fuel-guide-azerbaijan.html [R=301,L]
+RewriteRule ^az/blog/(fuel-guide-azerbaijan|azerbaijan-fuel-prices)\.html$ /az/blog/azerbaycan-yanacaq-rehberi.html [R=301,L]
+RewriteRule ^ru/blog/(fuel-guide-azerbaijan|azerbaijan-fuel-prices)\.html$ /ru/blog/toplivo-azerbajdzhan.html [R=301,L]
+RewriteRule ^en/blog/(car-insurance-azerbaijan|strakhovanie-avto-azerbaydzhan)\.html$ /en/blog/car-insurance-azerbaijan.html [R=301,L]
+RewriteRule ^az/blog/(car-insurance-azerbaijan|strakhovanie-avto-azerbaydzhan)\.html$ /az/blog/azerbaycan-avto-sigortasi.html [R=301,L]
+RewriteRule ^ru/blog/(car-insurance-azerbaijan|strakhovanie-avto-azerbaydzhan)\.html$ /ru/blog/strahovka-avto-azerbajdzhan.html [R=301,L]
+RewriteRule ^en/blog/(airport-car-rental-guide-baku|arenda-avto-v-aeroportu-baku|hava-limaninda-avtomobil-icaresi)\.html$ /en/blog/car-rental-at-baku-airport.html [R=301,L]
+RewriteRule ^az/blog/(airport-car-rental-guide-baku|arenda-avto-v-aeroportu-baku|hava-limaninda-avtomobil-icaresi)\.html$ /az/blog/baki-hava-limaninda-icare.html [R=301,L]
+RewriteRule ^ru/blog/(airport-car-rental-guide-baku|arenda-avto-v-aeroportu-baku|hava-limaninda-avtomobil-icaresi)\.html$ /ru/blog/arenda-avto-v-aeroportu-baku.html [R=301,L]
+RewriteRule ^en/blog/(how-to-rent-car-in-baku|kak-arendovat-avto-v-baku|bakida-avtomobil-icaresi)\.html$ /en/blog/how-to-rent-a-car-in-baku.html [R=301,L]
+RewriteRule ^az/blog/(how-to-rent-car-in-baku|kak-arendovat-avto-v-baku|bakida-avtomobil-icaresi)\.html$ /az/blog/baki-avto-icaresi-rehber.html [R=301,L]
+RewriteRule ^ru/blog/(how-to-rent-car-in-baku|kak-arendovat-avto-v-baku|bakida-avtomobil-icaresi)\.html$ /ru/blog/kak-arendovat-avto-v-baku.html [R=301,L]
+RewriteRule ^en/blog/(baku-city-driving-guide|is-it-safe-to-drive-in-baku)\.html$ /en/blog/travel-tips-baku.html [R=301,L]
+RewriteRule ^az/blog/(baku-city-driving-guide|is-it-safe-to-drive-in-baku)\.html$ /az/blog/baki-turistler-ucun-meslehetler.html [R=301,L]
+RewriteRule ^ru/blog/(baku-city-driving-guide|is-it-safe-to-drive-in-baku)\.html$ /ru/blog/sovety-turistam-baku.html [R=301,L]
+RewriteRule ^en/routes-azerbaijan\.html$ /en/routes.html [R=301,L]
+RewriteRule ^az/routes-azerbaijan\.html$ /az/routes.html [R=301,L]
+RewriteRule ^ru/routes-azerbaijan\.html$ /ru/routes.html [R=301,L]
+RewriteRule ^en/blog/traffic-rules/?$ /en/blog/driving-rules-in-azerbaijan.html [R=301,L]
+
+# EN blog — non-existent articles (→ closest existing article)
+Redirect 301 /en/blog/baku-city-driving-guide.html            /en/blog/travel-tips-baku.html
+Redirect 301 /en/blog/absheron-peninsula-by-car.html           /en/blog/road-trips-in-azerbaijan.html
+Redirect 301 /en/blog/gobustan-by-car.html                     /en/blog/road-trips-in-azerbaijan.html
+Redirect 301 /en/blog/azerbaijan-road-conditions.html          /en/blog/driving-rules-in-azerbaijan.html
+Redirect 301 /en/blog/azerbaijan-fuel-prices.html              /en/blog/fuel-guide-azerbaijan.html
+Redirect 301 /en/blog/baku-to-tbilisi-by-car.html              /en/blog/road-trips-in-azerbaijan.html
+Redirect 301 /en/blog/toll-roads-azerbaijan.html               /en/blog/driving-rules-in-azerbaijan.html
+Redirect 301 /en/blog/is-it-safe-to-drive-in-baku.html         /en/blog/travel-tips-baku.html
+Redirect 301 /en/blog/lankaran-road-trip.html                  /en/blog/road-trips-in-azerbaijan.html
+Redirect 301 /en/blog/baku-traffic-guide.html                  /en/blog/driving-rules-in-azerbaijan.html
+Redirect 301 /en/blog/azerbaycan-seyahetleri.html              /en/blog/road-trips-in-azerbaijan.html
+
+# RU blog — non-existent articles
+Redirect 301 /ru/blog/sostoyaniye-dorog-azerbaydzhan.html      /ru/blog/pravila-vozhdeniya-v-azerbajdzhane.html
+Redirect 301 /ru/blog/marshut-azerbaydzhan-7-dney.html         /ru/blog/poezdki-po-azerbajdzhanu.html
+Redirect 301 /ru/blog/samobytelnoye-puteshestviye-azerbaydzhan.html /ru/blog/poezdki-po-azerbajdzhanu.html
+Redirect 301 /ru/blog/mezhdunarodnye-prava-azerbaydzhan.html   /ru/blog/mezhdunarodnye-prava-azerbajdzhan.html
+Redirect 301 /ru/blog/toplivo-v-azerbaydzhane.html             /ru/blog/toplivo-azerbajdzhan.html
+Redirect 301 /ru/blog/baku-tbilisi-na-mashine.html             /ru/blog/poezdki-po-azerbajdzhanu.html
+Redirect 301 /ru/blog/gabala-iz-baku.html                      /ru/blog/poezdki-po-azerbajdzhanu.html
+Redirect 301 /ru/blog/chto-posmotret-v-baku.html               /ru/blog/sovety-turistam-baku.html
+Redirect 301 /ru/blog/kogda-luchshe-posetat-baku.html          /ru/blog/sovety-turistam-baku.html
+Redirect 301 /ru/blog/guba-iz-baku.html                        /ru/blog/poezdki-po-azerbajdzhanu.html
+Redirect 301 /ru/blog/tseny-na-benzin-azerbaydzhan.html        /ru/blog/toplivo-azerbajdzhan.html
+Redirect 301 /ru/blog/gornye-dorogi-azerbaydzhan.html          /ru/blog/pravila-vozhdeniya-v-azerbajdzhane.html
+Redirect 301 /ru/blog/parking-ryadom-so-starym-gorodom-baku.html /ru/blog/sovety-turistam-baku.html
+Redirect 301 /ru/blog/sheki-iz-baku.html                       /ru/blog/poezdki-po-azerbajdzhanu.html
+Redirect 301 /ru/blog/parking-v-baku.html                      /ru/blog/sovety-turistam-baku.html
+Redirect 301 /ru/blog/zimneye-vozhdeniye-azerbaydzhan.html     /ru/blog/pravila-vozhdeniya-v-azerbajdzhane.html
+Redirect 301 /ru/blog/kakoy-avto-vzyat-v-baku.html             /ru/blog/kakoe-avto-vybrat-baku.html
+Redirect 301 /ru/blog/ekskursii-iz-baku-na-mashine.html        /ru/blog/poezdki-po-azerbajdzhanu.html
+Redirect 301 /ru/blog/ekonom-ili-vnedorozhnik-baku.html        /ru/blog/kakoe-avto-vybrat-baku.html
+Redirect 301 /ru/blog/vozhdeniye-v-baku.html                   /ru/blog/pravila-vozhdeniya-v-azerbajdzhane.html
+Redirect 301 /ru/blog/probki-v-baku.html                       /ru/blog/sovety-turistam-baku.html
+Redirect 301 /ru/blog/puteshestviye-po-azerbaydzhanu-na-mashine.html /ru/blog/poezdki-po-azerbajdzhanu.html
+Redirect 301 /ru/blog/faq-arenda-avto-baku.html                /ru/faq.html
+Redirect 301 /ru/blog/shamakhi-iz-baku.html                    /ru/blog/poezdki-po-azerbajdzhanu.html
+Redirect 301 /ru/blog/bezopasno-li-ezdit-v-baku.html           /ru/blog/sovety-turistam-baku.html
+Redirect 301 /ru/blog/gobustan-na-mashine.html                 /ru/blog/poezdki-po-azerbajdzhanu.html
+Redirect 301 /ru/blog/lagydzh-iz-baku.html                     /ru/blog/poezdki-po-azerbajdzhanu.html
+Redirect 301 /ru/blog/strakhovanie-avto-azerbaydzhan.html      /ru/blog/strahovka-avto-azerbajdzhan.html
+Redirect 301 /ru/blog/poluostrov-apsheron-na-mashine.html      /ru/blog/poezdki-po-azerbajdzhanu.html
+Redirect 301 /ru/blog/lenkoran-iz-baku.html                    /ru/blog/poezdki-po-azerbajdzhanu.html
+Redirect 301 /ru/blog/sovety-po-arende-avto-baku.html          /ru/blog/kak-arendovat-avto-v-baku.html
+Redirect 301 /ru/blog/shtrafy-v-azerbaydzhane.html             /ru/blog/shtrafy-pdd-azerbajdzhan.html
+
+# AZ blog — non-existent articles
+Redirect 301 /az/blog/azerbaijan-road-conditions.html          /az/blog/azerbaycanda-suruculuk-qaydalari.html
+Redirect 301 /az/blog/baku-to-tbilisi-by-car.html              /az/blog/azerbaycanda-seyahet.html
+Redirect 301 /az/blog/when-to-visit-baku.html                  /az/blog/baki-turistler-ucun-meslehetler.html
+Redirect 301 /az/blog/what-to-see-in-baku.html                 /az/blog/baki-turistler-ucun-meslehetler.html
+Redirect 301 /az/blog/baku-day-trips-by-car.html               /az/blog/azerbaycanda-seyahet.html
+Redirect 301 /az/blog/absheron-peninsula-by-car.html           /az/blog/azerbaycanda-seyahet.html
+Redirect 301 /az/blog/parking-in-baku.html                     /az/blog/baki-turistler-ucun-meslehetler.html
+Redirect 301 /az/blog/guba-road-trip.html                      /az/blog/azerbaycanda-seyahet.html
+Redirect 301 /az/blog/shamakhi-day-trip.html                   /az/blog/azerbaycanda-seyahet.html
+Redirect 301 /az/blog/baku-traffic-guide.html                  /az/blog/azerbaycanda-suruculuk-qaydalari.html
+Redirect 301 /az/blog/azerbaijan-fuel-prices.html              /az/blog/azerbaycan-yanacaq-rehberi.html
+Redirect 301 /az/blog/mountain-roads-azerbaijan.html           /az/blog/azerbaycanda-suruculuk-qaydalari.html
+Redirect 301 /az/blog/gobustan-by-car.html                     /az/blog/azerbaycanda-seyahet.html
+Redirect 301 /az/blog/economy-vs-suv-baku.html                 /az/blog/baki-ucun-en-yaxsi-avto.html
+Redirect 301 /az/blog/baku-city-driving-guide.html             /az/blog/azerbaycanda-suruculuk-qaydalari.html
+Redirect 301 /az/blog/winter-driving-azerbaijan.html           /az/blog/azerbaycanda-suruculuk-qaydalari.html
+Redirect 301 /az/blog/toll-roads-azerbaijan.html               /az/blog/azerbaycanda-suruculuk-qaydalari.html
+Redirect 301 /az/blog/self-drive-azerbaijan.html               /az/blog/azerbaycanda-seyahet.html
+Redirect 301 /az/blog/lankaran-road-trip.html                  /az/blog/azerbaycanda-seyahet.html
+Redirect 301 /az/blog/old-city-baku-parking.html               /az/blog/baki-turistler-ucun-meslehetler.html
+Redirect 301 /az/blog/car-hire-vs-taxi-baku.html               /az/blog/
+Redirect 301 /az/blog/lahij-road-trip.html                     /az/blog/azerbaycanda-seyahet.html
+Redirect 301 /az/blog/sheki-road-trip.html                     /az/blog/azerbaycanda-seyahet.html
+Redirect 301 /az/blog/car-rental-tips-tourists.html            /az/faq.html
+Redirect 301 /az/blog/travel-azerbaijan-by-car.html            /az/blog/azerbaycanda-seyahet.html
+Redirect 301 /az/blog/car-rental-baku-faq.html                 /az/faq.html
+
+# ── EN landing pages — non-existent
+Redirect 301 /en/weekly-car-rental-baku.html                   /en/long-term-car-rental-baku.html
+Redirect 301 /en/daily-car-rental-baku.html                    /en/long-term-car-rental-baku.html
+Redirect 301 /en/kia-rio-rental-baku.html                      /en/cars/kia-rio.html
+Redirect 301 /en/chevrolet-cobalt-rental-baku.html             /en/cars/chevrolet-cobalt.html
+Redirect 301 /en/hyundai-elantra-rental-baku.html              /en/cars/hyundai-elantra.html
+
+# AZ landing pages — non-existent
+Redirect 301 /az/weekly-car-rental-baku.html                   /az/long-term-car-rental-baku.html
+Redirect 301 /az/daily-car-rental-baku.html                    /az/long-term-car-rental-baku.html
+Redirect 301 /az/kia-rio-rental-baku.html                      /az/cars/kia-rio.html
+Redirect 301 /az/chevrolet-cobalt-rental-baku.html             /az/cars/chevrolet-cobalt.html
+Redirect 301 /az/hyundai-elantra-rental-baku.html              /az/cars/hyundai-elantra.html
+
+# RU landing pages — non-existent
+Redirect 301 /ru/daily-car-rental-baku.html                    /ru/long-term-car-rental-baku.html
+Redirect 301 /ru/weekly-car-rental-baku.html                   /ru/long-term-car-rental-baku.html
+
+# EN blog — old aliases and stale article slugs
+Redirect 301 /en/blog/car-rental-baku-faq.html                 /en/faq.html
+Redirect 301 /en/blog/car-rental-tips-tourists.html            /en/faq.html
+Redirect 301 /en/blog/what-to-see-in-baku.html                 /en/blog/travel-tips-baku.html
+Redirect 301 /en/blog/when-to-visit-baku.html                  /en/blog/travel-tips-baku.html
+Redirect 301 /en/blog/parking-in-baku.html                     /en/blog/travel-tips-baku.html
+Redirect 301 /en/blog/gabala-road-trip.html                    /en/blog/road-trips-in-azerbaijan.html
+Redirect 301 /en/blog/airport-car-rental-guide-baku.html       /en/blog/car-rental-at-baku-airport.html
+Redirect 301 /en/blog/how-to-rent-car-in-baku.html             /en/blog/how-to-rent-a-car-in-baku.html
+Redirect 301 /en/blog/road-trips-azerbaijan.html              /en/blog/road-trips-in-azerbaijan.html
+Redirect 301 /en/blog/driving-rules-azerbaijan.html            /en/blog/driving-rules-in-azerbaijan.html
+
+# Old sub-paths from previous site
+Redirect 301 /ru/about/mission/                                 /ru/about.html
+Redirect 301 /ru/legislation/                                   /ru/terms.html
+
+# Explicit car -baku.html aliases (belt-and-suspenders alongside RewriteRule)
+Redirect 301 /ru/kia-cerato-baku.html                          /ru/cars/kia-cerato.html
+Redirect 301 /ru/hyundai-venue-baku.html                       /ru/cars/hyundai-venue.html
+Redirect 301 /ru/mercedes-e-class-baku.html                    /ru/cars/mercedes-e-class.html
+Redirect 301 /ru/hyundai-accent-baku.html                      /ru/cars/hyundai-accent.html
+Redirect 301 /ru/hyundai-elantra-baku.html                     /ru/cars/hyundai-elantra.html
+Redirect 301 /ru/chevrolet-aveo-baku.html                      /ru/cars/chevrolet-aveo.html
+Redirect 301 /ru/hyundai-sonata-baku.html                      /ru/cars/hyundai-sonata.html
+Redirect 301 /ru/toyota-rav4-baku.html                         /ru/cars/toyota-rav4.html

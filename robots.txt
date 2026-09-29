@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /test/
+Disallow: /dev/
+Disallow: /backup/
+Disallow: /email-template.html
+Disallow: /google-apps-script.js
+Disallow: /ru/booking-form.html
+Disallow: /*/nav.html
+Disallow: /*/footer.html
+
+# Booking pages with query parameters — not useful for indexing
+Disallow: /ru/booking.html?
+Disallow: /en/booking.html?
+Disallow: /az/booking.html?
+
+Sitemap: https://millicars.az/sitemap.xml
+
+# Millicars - Car Rental Baku
+Host: https://millicars.az

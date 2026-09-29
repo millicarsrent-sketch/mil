@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background -->
+  <rect width="100" height="100" rx="16" fill="#0f3d2e"/>
+
+  <!-- Speed lines (motion streaks, middle one longer for depth effect) -->
+  <line x1="8"  y1="31" x2="30" y2="31" stroke="#2ecc71" stroke-width="4" stroke-linecap="round"/>
+  <line x1="4"  y1="50" x2="30" y2="50" stroke="#2ecc71" stroke-width="4" stroke-linecap="round"/>
+  <line x1="8"  y1="69" x2="30" y2="69" stroke="#2ecc71" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Bold geometric M -->
+  <path d="M36,80 L36,20 L63,54 L90,20 L90,80 L83,80 L83,36 L63,62 L43,36 L43,80 Z" fill="#2ecc71"/>
+</svg>

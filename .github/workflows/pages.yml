@@ -1,0 +1,44 @@
+name: Deploy Millicars to GitHub Pages
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Stage static site
+        run: mkdir _site && rsync -a --exclude='.git/' --exclude='.github/' --exclude='supabase/' --exclude='_site/' --exclude='.gitignore' --exclude='.env*' ./ _site/ && printf 'millicars.az\n' > _site/CNAME
+      - name: Inject Supabase public configuration
+        env:
+          MC_SUPABASE_URL: ${{ secrets.MC_SUPABASE_URL }}
+          MC_SUPABASE_ANON_KEY: ${{ secrets.MC_SUPABASE_ANON_KEY }}
+        run: |
+          test -n "$MC_SUPABASE_URL" || (echo "Missing MC_SUPABASE_URL repository secret" && exit 1)
+          test -n "$MC_SUPABASE_ANON_KEY" || (echo "Missing MC_SUPABASE_ANON_KEY repository secret" && exit 1)
+          node -e 'process.stdout.write("window.MC_SUPABASE_CONFIG = " + JSON.stringify({url: process.env.MC_SUPABASE_URL, anonKey: process.env.MC_SUPABASE_ANON_KEY}) + ";\n")' > _site/js/supabase-env.js
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

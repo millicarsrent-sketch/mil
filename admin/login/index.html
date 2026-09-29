@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0a2a1e">
+  <title>Вход в отчёты | Millicars</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/admin.css">
+  <script defer src="../../js/supabase-env.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script defer src="../../js/supabase-client.js"></script>
+  <script defer src="../../js/admin-login.js"></script>
+</head>
+<body class="admin-body">
+  <main class="admin-login">
+    <a class="admin-brand" href="/">Milli<span>cars</span></a>
+    <form id="login-form" class="admin-login-form">
+      <h1>Вход в отчёты</h1>
+      <label for="login-email">Email</label>
+      <input id="login-email" type="email" value="millicarsrent@gmail.com" autocomplete="username" required>
+      <label for="login-password">Пароль</label>
+      <input id="login-password" type="password" autocomplete="current-password" required>
+      <button type="submit" class="admin-primary">Войти</button>
+      <p id="login-message" class="admin-message" role="alert"></p>
+    </form>
+  </main>
+</body>
+</html>
