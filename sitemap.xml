@@ -202,9 +202,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/rent-a-car-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/rent-a-car-baku.html"/>
     <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/rent-a-car-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/rent-a-car-baku.html"/>
   </url>
   <url>
     <loc>https://millicars.az/en/car-rental-in-baku.html</loc>
@@ -212,9 +210,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/car-rental-in-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/car-rental-in-baku.html"/>
+    <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/arenda-avto-v-baku.html"/>
     <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/car-rental-in-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/car-rental-in-baku.html"/>
   </url>
   <url>
     <loc>https://millicars.az/en/baku-car-rental.html</loc>
@@ -222,9 +219,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/baku-car-rental.html"/>
-    <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/baku-car-rental.html"/>
     <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/baku-car-rental.html"/>
-    <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/baku-car-rental.html"/>
   </url>
   <url>
     <loc>https://millicars.az/en/rent-car-baku.html</loc>
@@ -232,9 +227,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/rent-car-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/rent-car-baku.html"/>
     <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/rent-car-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/rent-car-baku.html"/>
   </url>
   <url>
     <loc>https://millicars.az/en/cheap-car-rental-in-baku.html</loc>
@@ -242,9 +235,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/cheap-car-rental-in-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/cheap-car-rental-in-baku.html"/>
     <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/cheap-car-rental-in-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/cheap-car-rental-in-baku.html"/>
   </url>
   <url>
     <loc>https://millicars.az/en/best-car-rental-baku.html</loc>
@@ -252,59 +243,44 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/best-car-rental-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/best-car-rental-baku.html"/>
     <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/best-car-rental-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/best-car-rental-baku.html"/>
   </url>
   <url>
     <loc>https://millicars.az/ru/arenda-avto-v-baku.html</loc>
     <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/arenda-avto-v-baku.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/car-rental-in-baku.html"/>
     <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/arenda-avto-v-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/arenda-avto-v-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/arenda-avto-v-baku.html"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/car-rental-in-baku.html"/>
   </url>
   <url>
     <loc>https://millicars.az/ru/baku-arenda-avto.html</loc>
     <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/baku-arenda-avto.html"/>
     <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/baku-arenda-avto.html"/>
-    <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/baku-arenda-avto.html"/>
-    <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/baku-arenda-avto.html"/>
   </url>
   <url>
     <loc>https://millicars.az/ru/prokat-avto-v-baku.html</loc>
     <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/prokat-avto-v-baku.html"/>
     <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/prokat-avto-v-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/prokat-avto-v-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/prokat-avto-v-baku.html"/>
   </url>
   <url>
     <loc>https://millicars.az/ru/deshevaya-arenda-avto-v-baku.html</loc>
     <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/deshevaya-arenda-avto-v-baku.html"/>
     <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/deshevaya-arenda-avto-v-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/deshevaya-arenda-avto-v-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/deshevaya-arenda-avto-v-baku.html"/>
   </url>
   <url>
     <loc>https://millicars.az/ru/luchshaya-arenda-avto-v-baku.html</loc>
     <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/luchshaya-arenda-avto-v-baku.html"/>
     <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/luchshaya-arenda-avto-v-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/luchshaya-arenda-avto-v-baku.html"/>
-    <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/luchshaya-arenda-avto-v-baku.html"/>
   </url>
   <url>
     <loc>https://millicars.az/az/faq.html</loc>
@@ -928,40 +904,6 @@
     <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/blog/toplivo-azerbajdzhan.html"/>
     <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/blog/fuel-guide-azerbaijan.html"/>
     <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/blog/azerbaycan-yanacaq-rehberi.html"/>
-  </url>
-
-  <!-- ══════════════════════════════════════════════════════════
-       Blog — Traffic Fines Azerbaijan
-       ══════════════════════════════════════════════════════════ -->
-  <url>
-    <loc>https://millicars.az/ru/blog/shtrafy-pdd-azerbajdzhan.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/blog/traffic-fines-azerbaijan.html"/>
-    <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/blog/shtrafy-pdd-azerbajdzhan.html"/>
-    <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/blog/traffic-fines-azerbaijan.html"/>
-    <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/blog/azerbaycan-cerimeleri.html"/>
-  </url>
-  <url>
-    <loc>https://millicars.az/en/blog/traffic-fines-azerbaijan.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/blog/traffic-fines-azerbaijan.html"/>
-    <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/blog/shtrafy-pdd-azerbajdzhan.html"/>
-    <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/blog/traffic-fines-azerbaijan.html"/>
-    <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/blog/azerbaycan-cerimeleri.html"/>
-  </url>
-  <url>
-    <loc>https://millicars.az/az/blog/azerbaycan-cerimeleri.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/blog/traffic-fines-azerbaijan.html"/>
-    <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/blog/shtrafy-pdd-azerbajdzhan.html"/>
-    <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/blog/traffic-fines-azerbaijan.html"/>
-    <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/blog/azerbaycan-cerimeleri.html"/>
   </url>
 
   <!-- ══════════════════════════════════════════════════════════

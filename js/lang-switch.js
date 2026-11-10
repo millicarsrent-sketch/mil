@@ -65,7 +65,6 @@
     ['/ru/blog/sovety-turistam-baku.html',                '/en/blog/travel-tips-baku.html',                     '/az/blog/baki-turistler-ucun-meslehetler.html'],
     ['/ru/blog/kakoe-avto-vybrat-baku.html',              '/en/blog/best-car-for-baku.html',                    '/az/blog/baki-ucun-en-yaxsi-avto.html'],
     ['/ru/blog/mezhdunarodnye-prava-azerbajdzhan.html',   '/en/blog/international-driving-permit-azerbaijan.html','/az/blog/beynelxalq-suruculuk-vesiqesi.html'],
-    ['/ru/blog/shtrafy-pdd-azerbajdzhan.html',            '/en/blog/traffic-fines-azerbaijan.html',              '/az/blog/azerbaycan-cerimeleri.html'],
     ['/ru/blog/strahovka-avto-azerbajdzhan.html',         '/en/blog/car-insurance-azerbaijan.html',              '/az/blog/azerbaycan-avto-sigortasi.html'],
     ['/ru/blog/toplivo-azerbajdzhan.html',                '/en/blog/fuel-guide-azerbaijan.html',                 '/az/blog/azerbaycan-yanacaq-rehberi.html'],
 
