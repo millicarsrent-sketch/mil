@@ -737,25 +737,14 @@
   </url>
 
   <!-- ══════════════════════════════════════════════════════════
-       Blog — Driving Rules in Azerbaijan
+       Blog — Driving Rules in Azerbaijan (EN/AZ)
        ══════════════════════════════════════════════════════════ -->
-  <url>
-    <loc>https://millicars.az/ru/blog/pravila-vozhdeniya-v-azerbajdzhane.html</loc>
-    <lastmod>2026-05-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/blog/driving-rules-in-azerbaijan.html"/>
-    <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/blog/pravila-vozhdeniya-v-azerbajdzhane.html"/>
-    <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/blog/driving-rules-in-azerbaijan.html"/>
-    <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/blog/azerbaycanda-suruculuk-qaydalari.html"/>
-  </url>
   <url>
     <loc>https://millicars.az/en/blog/driving-rules-in-azerbaijan.html</loc>
     <lastmod>2026-05-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/blog/driving-rules-in-azerbaijan.html"/>
-    <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/blog/pravila-vozhdeniya-v-azerbajdzhane.html"/>
     <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/blog/driving-rules-in-azerbaijan.html"/>
     <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/blog/azerbaycanda-suruculuk-qaydalari.html"/>
   </url>
@@ -765,7 +754,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/blog/driving-rules-in-azerbaijan.html"/>
-    <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/blog/pravila-vozhdeniya-v-azerbajdzhane.html"/>
     <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/blog/driving-rules-in-azerbaijan.html"/>
     <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/blog/azerbaycanda-suruculuk-qaydalari.html"/>
   </url>
@@ -873,26 +861,14 @@
   </url>
 
   <!-- ══════════════════════════════════════════════════════════
-       Blog — Fuel Guide Azerbaijan
+       Blog — Fuel Guide Azerbaijan (RU/AZ)
        ══════════════════════════════════════════════════════════ -->
   <url>
     <loc>https://millicars.az/ru/blog/toplivo-azerbajdzhan.html</loc>
     <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/blog/fuel-guide-azerbaijan.html"/>
     <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/blog/toplivo-azerbajdzhan.html"/>
-    <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/blog/fuel-guide-azerbaijan.html"/>
-    <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/blog/azerbaycan-yanacaq-rehberi.html"/>
-  </url>
-  <url>
-    <loc>https://millicars.az/en/blog/fuel-guide-azerbaijan.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/blog/fuel-guide-azerbaijan.html"/>
-    <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/blog/toplivo-azerbajdzhan.html"/>
-    <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/blog/fuel-guide-azerbaijan.html"/>
     <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/blog/azerbaycan-yanacaq-rehberi.html"/>
   </url>
   <url>
@@ -900,33 +876,19 @@
     <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/blog/fuel-guide-azerbaijan.html"/>
     <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/blog/toplivo-azerbajdzhan.html"/>
-    <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/blog/fuel-guide-azerbaijan.html"/>
     <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/blog/azerbaycan-yanacaq-rehberi.html"/>
   </url>
 
   <!-- ══════════════════════════════════════════════════════════
-       Blog — International Driving Permit Azerbaijan
+       Blog — International Driving Permit Azerbaijan (RU/AZ)
        ══════════════════════════════════════════════════════════ -->
   <url>
     <loc>https://millicars.az/ru/blog/mezhdunarodnye-prava-azerbajdzhan.html</loc>
     <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/blog/international-driving-permit-azerbaijan.html"/>
     <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/blog/mezhdunarodnye-prava-azerbajdzhan.html"/>
-    <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/blog/international-driving-permit-azerbaijan.html"/>
-    <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/blog/beynelxalq-suruculuk-vesiqesi.html"/>
-  </url>
-  <url>
-    <loc>https://millicars.az/en/blog/international-driving-permit-azerbaijan.html</loc>
-    <lastmod>2026-05-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/blog/international-driving-permit-azerbaijan.html"/>
-    <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/blog/mezhdunarodnye-prava-azerbajdzhan.html"/>
-    <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/blog/international-driving-permit-azerbaijan.html"/>
     <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/blog/beynelxalq-suruculuk-vesiqesi.html"/>
   </url>
   <url>
@@ -934,9 +896,7 @@
     <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://millicars.az/en/blog/international-driving-permit-azerbaijan.html"/>
     <xhtml:link rel="alternate" hreflang="ru"        href="https://millicars.az/ru/blog/mezhdunarodnye-prava-azerbajdzhan.html"/>
-    <xhtml:link rel="alternate" hreflang="en"        href="https://millicars.az/en/blog/international-driving-permit-azerbaijan.html"/>
     <xhtml:link rel="alternate" hreflang="az"        href="https://millicars.az/az/blog/beynelxalq-suruculuk-vesiqesi.html"/>
   </url>
 

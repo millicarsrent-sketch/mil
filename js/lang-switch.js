@@ -61,12 +61,12 @@
     ['/ru/blog/arenda-avto-v-aeroportu-baku.html',       '/en/blog/car-rental-at-baku-airport.html',           '/az/blog/baki-hava-limaninda-icare.html'],
     ['/ru/blog/kak-arendovat-avto-v-baku.html',          '/en/blog/how-to-rent-a-car-in-baku.html',            '/az/blog/baki-avto-icaresi-rehber.html'],
     ['/ru/blog/poezdki-po-azerbajdzhanu.html',            '/en/blog/road-trips-in-azerbaijan.html',             '/az/blog/azerbaycanda-seyahet.html'],
-    ['/ru/blog/pravila-vozhdeniya-v-azerbajdzhane.html',  '/en/blog/driving-rules-in-azerbaijan.html',          '/az/blog/azerbaycanda-suruculuk-qaydalari.html'],
+    ['',                                                '/en/blog/driving-rules-in-azerbaijan.html',          '/az/blog/azerbaycanda-suruculuk-qaydalari.html'],
     ['/ru/blog/sovety-turistam-baku.html',                '/en/blog/travel-tips-baku.html',                     '/az/blog/baki-turistler-ucun-meslehetler.html'],
     ['/ru/blog/kakoe-avto-vybrat-baku.html',              '/en/blog/best-car-for-baku.html',                    '/az/blog/baki-ucun-en-yaxsi-avto.html'],
-    ['/ru/blog/mezhdunarodnye-prava-azerbajdzhan.html',   '/en/blog/international-driving-permit-azerbaijan.html','/az/blog/beynelxalq-suruculuk-vesiqesi.html'],
+    ['/ru/blog/mezhdunarodnye-prava-azerbajdzhan.html',   '',                                                    '/az/blog/beynelxalq-suruculuk-vesiqesi.html'],
     ['/ru/blog/strahovka-avto-azerbajdzhan.html',         '/en/blog/car-insurance-azerbaijan.html',              '/az/blog/azerbaycan-avto-sigortasi.html'],
-    ['/ru/blog/toplivo-azerbajdzhan.html',                '/en/blog/fuel-guide-azerbaijan.html',                 '/az/blog/azerbaycan-yanacaq-rehberi.html'],
+    ['/ru/blog/toplivo-azerbajdzhan.html',                '',                                                    '/az/blog/azerbaycan-yanacaq-rehberi.html'],
 
     // ── Car detail pages (21 cars) ───────────────────────────
     ['/ru/cars/chevrolet-spark.html',    '/en/cars/chevrolet-spark.html',    '/az/cars/chevrolet-spark.html'],
