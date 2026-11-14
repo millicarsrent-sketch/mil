@@ -1,5 +1,5 @@
 /* ============================================================
-   Millicars — analytics.js  v2.2
+   Millicars — analytics.js  v2.3
    GTM-TDD3DT6H manages GA4 (G-RVLB8GVHPH) and Google Ads (AW-18074522238).
    This file: dataLayer init + mcTrack helper + Yandex Metrika (optional).
    GTM snippet is in every HTML <head>/<body> — do NOT load GA4/GAds here.
@@ -12,19 +12,6 @@ var MC_CONFIG = {
 };
 
 window.dataLayer = window.dataLayer || [];
-
-// ── Direct GA4 load (fallback if GTM tag is not configured) ──
-// Safe to keep even if GTM also fires GA4 — GA4 deduplicates by client_id.
-(function() {
-  if (typeof window.gtag === 'function') return; // already loaded by GTM
-  var s = document.createElement('script');
-  s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RVLB8GVHPH';
-  document.head.appendChild(s);
-  window.gtag = function() { window.dataLayer.push(arguments); };
-  window.gtag('js', new Date());
-  window.gtag('config', 'G-RVLB8GVHPH', { send_page_view: true });
-})();
 
 // ── Optional: Yandex Metrika ─────────────────────────────────
 if (typeof MC_CONFIG.YM_ID === 'number' && MC_CONFIG.YM_ID > 0) {
