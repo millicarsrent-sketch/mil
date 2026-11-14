@@ -2,27 +2,27 @@
   'use strict';
 
   const CARS = [
-    {id:'chevrolet-spark',  badge:'A', cat:'A', name:'Chevrolet Spark',    year:2022, clsRu:'Эконом',    clsEn:'Economy',   clsAz:'Ekonom',   price:25,  tariff:[90,45,40,35,30,25],      deposit:500,  seats:5, trans:'M', fuel:'⛽', img:'chevrolet-spark.webp',  franchise:[1500,500]},
-    {id:'suzuki-swift',     badge:'A', cat:'A', name:'Suzuki Swift',       year:2023, clsRu:'Эконом',    clsEn:'Economy',   clsAz:'Ekonom',   price:25,  tariff:[90,45,40,35,30,25],      deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'suzuki-swift.webp',     franchise:[1500,500]},
-    {id:'chevrolet-cobalt', badge:'B', cat:'B', name:'Chevrolet Cobalt',   year:2022, clsRu:'Базовый',   clsEn:'Basic',     clsAz:'Əsas',     price:30,  tariff:[100,50,45,40,35,30],     deposit:500,  seats:5, trans:'M', fuel:'⛽', img:'chevrolet-cobalt.webp', franchise:[2000,500], popular:true},
-    {id:'chevrolet-aveo',   badge:'B', cat:'B', name:'Chevrolet Aveo',     year:2022, clsRu:'Базовый',   clsEn:'Basic',     clsAz:'Əsas',     price:30,  tariff:[100,50,45,40,35,30],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'chevrolet-aveo.webp',   franchise:[2000,500]},
-    {id:'kia-rio',          badge:'C', cat:'C', name:'Kia Rio',            year:2022, clsRu:'Комфорт',   clsEn:'Comfort',   clsAz:'Komfort',  price:30,  tariff:[120,60,50,45,35,30],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'kia-rio.webp',          franchise:[2000,500]},
-    {id:'hyundai-accent',   badge:'C', cat:'C', name:'Hyundai Accent',     year:2022, clsRu:'Комфорт',   clsEn:'Comfort',   clsAz:'Komfort',  price:30,  tariff:[120,60,50,45,35,30],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'hyundai-accent.webp',   franchise:[2000,500]},
-    {id:'skoda-rapid',      badge:'C', cat:'C', name:'Skoda Rapid',        year:2023, clsRu:'Комфорт',   clsEn:'Comfort',   clsAz:'Komfort',  price:30,  tariff:[120,60,50,45,35,30],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'skoda-rapid.webp',      franchise:[2000,500]},
-    {id:'toyota-corolla',   badge:'D', cat:'D', name:'Toyota Corolla',     year:2023, clsRu:'Стандарт',  clsEn:'Standard',  clsAz:'Standart', price:40,  tariff:[150,80,70,60,50,40],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'toyota-corolla.webp',   franchise:[3000,500]},
-    {id:'hyundai-elantra',  badge:'D', cat:'D', name:'Hyundai Elantra',    year:2022, clsRu:'Стандарт',  clsEn:'Standard',  clsAz:'Standart', price:40,  tariff:[150,80,70,60,50,40],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'hyundai-elantra.webp',  franchise:[3000,500]},
-    {id:'kia-cerato',       badge:'D', cat:'D', name:'Kia Cerato',         year:2022, clsRu:'Стандарт',  clsEn:'Standard',  clsAz:'Standart', price:40,  tariff:[150,80,70,60,50,40],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'kia-cerato.webp',       franchise:[3000,500]},
-    {id:'byd-destroyer',    badge:'D', cat:'D', name:'BYD Destroyer',      year:2024, clsRu:'Стандарт',  clsEn:'Standard',  clsAz:'Standart', price:40,  tariff:[150,80,70,60,50,40],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'byd-destroyer.webp',    franchise:[3000,500], popular:true},
-    {id:'toyota-camry',     badge:'E', cat:'E', name:'Toyota Camry',       year:2023, clsRu:'Бизнес',    clsEn:'Business',  clsAz:'Biznes',   price:80,  tariff:[210,120,110,100,90,80],  deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'toyota-camry.webp',     franchise:[10000,500]},
-    {id:'hyundai-sonata',   badge:'E', cat:'E', name:'Hyundai Sonata',     year:2022, clsRu:'Бизнес',    clsEn:'Business',  clsAz:'Biznes',   price:80,  tariff:[210,120,110,100,90,80],  deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'hyundai-sonata.webp',   franchise:[10000,500]},
-    {id:'hyundai-creta',    badge:'F', cat:'F', name:'Hyundai Creta',      year:2023, clsRu:'Кроссовер', clsEn:'Crossover', clsAz:'Krossover',price:50,  tariff:[200,90,80,65,60,50],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'hyundai-creta.webp',    franchise:[10000,500]},
-    {id:'hyundai-venue',    badge:'F', cat:'F', name:'Hyundai Venue',      year:2023, clsRu:'Кроссовер', clsEn:'Crossover', clsAz:'Krossover',price:50,  tariff:[200,90,80,65,60,50],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'hyundai-venue.webp',    franchise:[10000,500]},
-    {id:'kia-sportage',     badge:'G', cat:'G', name:'Kia Sportage',       year:2023, clsRu:'SUV',       clsEn:'SUV',       clsAz:'SUV',      price:90,  tariff:[260,130,120,110,100,90], deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'kia-sportage.webp',     franchise:[10000,500]},
-    {id:'hyundai-tucson',   badge:'G', cat:'G', name:'Hyundai Tucson',     year:2023, clsRu:'SUV',       clsEn:'SUV',       clsAz:'SUV',      price:90,  tariff:[260,130,120,110,100,90], deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'hyundai-tucson.webp',   franchise:[10000,500], popular:true},
-    {id:'toyota-rav4',      badge:'G', cat:'G', name:'Toyota RAV4',        year:2023, clsRu:'SUV',       clsEn:'SUV',       clsAz:'SUV',      price:90,  tariff:[260,130,120,110,100,90], deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'toyota-rav4.webp',      franchise:[10000,500]},
-    {id:'mercedes-e-class', badge:'H', cat:'H', name:'Mercedes E-Class',   year:2023, clsRu:'Люкс',      clsEn:'Luxury',    clsAz:'Lüks',     price:95,  tariff:[250,150,130,120,110,95],  deposit:1000, seats:5, trans:'A', fuel:'⛽', img:'mercedes-e-class.webp', franchise:[20000,1000], gold:true},
-    {id:'mercedes-vito',    badge:'I', cat:'I', name:'Mercedes-Benz Vito', year:2022, clsRu:'Минивэн',   clsEn:'Minivan',   clsAz:'Miniven',  price:90,  tariff:[320,160,145,130,115,90],  deposit:1000, seats:8, trans:'A', fuel:'⛽', img:'mercedes-vito.webp',    franchise:[20000,1000]},
-    {id:'hyundai-staria',   badge:'I', cat:'I', name:'Hyundai Staria',     year:2023, clsRu:'Минивэн',   clsEn:'Minivan',   clsAz:'Miniven',  price:90,  tariff:[320,160,145,130,115,90],  deposit:1000, seats:7, trans:'A', fuel:'⛽', img:'hyundai-staria.webp',   franchise:[20000,1000]}
+    {id:'chevrolet-spark',  badge:'A', cat:'A', name:'Chevrolet Spark', clsRu:'Эконом',    clsEn:'Economy',   clsAz:'Ekonom',   price:25,  tariff:[90,45,40,35,30,25],      deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'chevrolet-spark.webp',  franchise:[1500,500]},
+    {id:'suzuki-swift',     badge:'A', cat:'A', name:'Suzuki Swift', clsRu:'Эконом',    clsEn:'Economy',   clsAz:'Ekonom',   price:25,  tariff:[90,45,40,35,30,25],      deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'suzuki-swift.webp',     franchise:[1500,500]},
+    {id:'chevrolet-cobalt', badge:'B', cat:'B', name:'Chevrolet Cobalt', clsRu:'Базовый',   clsEn:'Basic',     clsAz:'Əsas',     price:30,  tariff:[100,50,45,40,35,30],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'chevrolet-cobalt.webp', franchise:[2000,500], popular:true},
+    {id:'chevrolet-aveo',   badge:'B', cat:'B', name:'Chevrolet Aveo', clsRu:'Базовый',   clsEn:'Basic',     clsAz:'Əsas',     price:30,  tariff:[100,50,45,40,35,30],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'chevrolet-aveo.webp',   franchise:[2000,500]},
+    {id:'kia-rio',          badge:'C', cat:'C', name:'Kia Rio', clsRu:'Комфорт',   clsEn:'Comfort',   clsAz:'Komfort',  price:30,  tariff:[120,60,50,45,35,30],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'kia-rio.webp',          franchise:[2000,500]},
+    {id:'hyundai-accent',   badge:'C', cat:'C', name:'Hyundai Accent', clsRu:'Комфорт',   clsEn:'Comfort',   clsAz:'Komfort',  price:30,  tariff:[120,60,50,45,35,30],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'hyundai-accent.webp',   franchise:[2000,500]},
+    {id:'skoda-rapid',      badge:'C', cat:'C', name:'Skoda Rapid', clsRu:'Комфорт',   clsEn:'Comfort',   clsAz:'Komfort',  price:30,  tariff:[120,60,50,45,35,30],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'skoda-rapid.webp',      franchise:[2000,500]},
+    {id:'toyota-corolla',   badge:'D', cat:'D', name:'Toyota Corolla', clsRu:'Стандарт',  clsEn:'Standard',  clsAz:'Standart', price:40,  tariff:[150,80,70,60,50,40],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'toyota-corolla.webp',   franchise:[3000,500]},
+    {id:'hyundai-elantra',  badge:'D', cat:'D', name:'Hyundai Elantra', clsRu:'Стандарт',  clsEn:'Standard',  clsAz:'Standart', price:40,  tariff:[150,80,70,60,50,40],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'hyundai-elantra.webp',  franchise:[3000,500]},
+    {id:'kia-cerato',       badge:'D', cat:'D', name:'Kia Cerato', clsRu:'Стандарт',  clsEn:'Standard',  clsAz:'Standart', price:40,  tariff:[150,80,70,60,50,40],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'kia-cerato.webp',       franchise:[3000,500]},
+    {id:'byd-destroyer',    badge:'D', cat:'D', name:'BYD Destroyer', clsRu:'Стандарт',  clsEn:'Standard',  clsAz:'Standart', price:40,  tariff:[150,80,70,60,50,40],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'byd-destroyer.webp',    franchise:[3000,500], popular:true},
+    {id:'toyota-camry',     badge:'E', cat:'E', name:'Toyota Camry', clsRu:'Бизнес',    clsEn:'Business',  clsAz:'Biznes',   price:80,  tariff:[210,120,110,100,90,80],  deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'toyota-camry.webp',     franchise:[10000,500]},
+    {id:'hyundai-sonata',   badge:'E', cat:'E', name:'Hyundai Sonata', clsRu:'Бизнес',    clsEn:'Business',  clsAz:'Biznes',   price:80,  tariff:[210,120,110,100,90,80],  deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'hyundai-sonata.webp',   franchise:[10000,500]},
+    {id:'hyundai-creta',    badge:'F', cat:'F', name:'Hyundai Creta', clsRu:'Кроссовер', clsEn:'Crossover', clsAz:'Krossover',price:50,  tariff:[200,90,80,65,60,50],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'hyundai-creta.webp',    franchise:[10000,500]},
+    {id:'hyundai-venue',    badge:'F', cat:'F', name:'Hyundai Venue', clsRu:'Кроссовер', clsEn:'Crossover', clsAz:'Krossover',price:50,  tariff:[200,90,80,65,60,50],     deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'hyundai-venue.webp',    franchise:[10000,500]},
+    {id:'kia-sportage',     badge:'G', cat:'G', name:'Kia Sportage', clsRu:'SUV',       clsEn:'SUV',       clsAz:'SUV',      price:90,  tariff:[260,130,120,110,100,90], deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'kia-sportage.webp',     franchise:[10000,500]},
+    {id:'hyundai-tucson',   badge:'G', cat:'G', name:'Hyundai Tucson', clsRu:'SUV',       clsEn:'SUV',       clsAz:'SUV',      price:90,  tariff:[260,130,120,110,100,90], deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'hyundai-tucson.webp',   franchise:[10000,500], popular:true},
+    {id:'toyota-rav4',      badge:'G', cat:'G', name:'Toyota RAV4', clsRu:'SUV',       clsEn:'SUV',       clsAz:'SUV',      price:90,  tariff:[260,130,120,110,100,90], deposit:500,  seats:5, trans:'A', fuel:'⛽', img:'toyota-rav4.webp',      franchise:[10000,500]},
+    {id:'mercedes-e-class', badge:'H', cat:'H', name:'Mercedes E-Class', clsRu:'Люкс',      clsEn:'Luxury',    clsAz:'Lüks',     price:95,  tariff:[250,150,130,120,110,95],  deposit:1000, seats:5, trans:'A', fuel:'⛽', img:'mercedes-e-class.webp', franchise:[20000,1000], gold:true},
+    {id:'mercedes-vito',    badge:'I', cat:'I', name:'Mercedes-Benz Vito', clsRu:'Минивэн',   clsEn:'Minivan',   clsAz:'Miniven',  price:90,  tariff:[320,160,145,130,115,90],  deposit:1000, seats:8, trans:'A', fuel:'⛽', img:'mercedes-vito.webp',    franchise:[20000,1000]},
+    {id:'hyundai-staria',   badge:'I', cat:'I', name:'Hyundai Staria', clsRu:'Минивэн',   clsEn:'Minivan',   clsAz:'Miniven',  price:90,  tariff:[320,160,145,130,115,90],  deposit:1000, seats:7, trans:'A', fuel:'⛽', img:'hyundai-staria.webp',   franchise:[20000,1000]}
   ];
 
   window.MC_PC_T = (function () {
@@ -39,7 +39,7 @@
       selectCar:'Выбрать авто', errorCar:'Выберите автомобиль',
       successTitle:'Заявка принята!', successMsg:'Ваша заявка на бронирование отправлена.',
       th1:'2–3 дн.', th2:'4–7 дн.', th3:'8–15 дн.', th4:'15–30 дн.', th5:'31+ дн.',
-      depLabel:'Залог', transA:'Автомат', transM:'Механика',
+      depLabel:'Залог', transA:'Автомат',
       insIncl:'Страховка', acIncl:'Кондиционер', popLabel:'Хит',
       insLabel:'Страховка', extrasLabel:'Доп. услуги', totalLabel:'Итого',
       loadingBtn:'Отправляем...', deliveryLabel:'Доставка',
@@ -66,7 +66,7 @@
       selectCar:'Book Now', errorCar:'Please select a car',
       successTitle:'Request received!', successMsg:'Your booking request has been sent.',
       th1:'2–3 d.', th2:'4–7 d.', th3:'8–15 d.', th4:'15–30 d.', th5:'31+ d.',
-      depLabel:'Deposit', transA:'Automatic', transM:'Manual',
+      depLabel:'Deposit', transA:'Automatic',
       insIncl:'Insurance', acIncl:'A/C', popLabel:'Popular',
       insLabel:'Insurance', extrasLabel:'Extras', totalLabel:'Total',
       loadingBtn:'Sending...', deliveryLabel:'Delivery',
@@ -93,7 +93,7 @@
       selectCar:'Sifariş et', errorCar:'Avtomobil seçin',
       successTitle:'Müraciətiniz qəbul edildi!', successMsg:'Sifariş müraciətiniz göndərildi.',
       th1:'2–3 gün', th2:'4–7 gün', th3:'8–15 gün', th4:'15–30 gün', th5:'31+ gün',
-      depLabel:'Depozit', transA:'Avtomat', transM:'Mexaniki',
+      depLabel:'Depozit', transA:'Avtomat',
       insIncl:'Sığorta', acIncl:'Kondisioner', popLabel:'Populyar',
       insLabel:'Sığorta', extrasLabel:'Əlavə xidmətlər', totalLabel:'Cəmi',
       loadingBtn:'Göndərilir...', deliveryLabel:'Çatdırılma',
@@ -286,8 +286,7 @@
       let car = CARS.find(function (item) { return item.name.toLowerCase() === record.brand_model.toLowerCase(); });
       if (!car) {
         car = {
-          id: 'db-' + record.id, badge: 'D', cat: 'D', name: record.brand_model,
-          year: '', clsRu: 'Автомобиль', clsEn: 'Car', clsAz: 'Avtomobil',
+          id: 'db-' + record.id, badge: 'D', cat: 'D', name: record.brand_model, clsRu: 'Автомобиль', clsEn: 'Car', clsAz: 'Avtomobil',
           price: Number(record.price_per_day), tariff: null, deposit: 500,
           seats: 5, trans: 'A', fuel: '', img: '', franchise: null
         };
