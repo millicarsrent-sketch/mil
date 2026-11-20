@@ -971,7 +971,7 @@
       window.open('https://wa.me/994103115001?text=' + encodeURIComponent(lines.join('\n')), '_blank');
     }
 
-    const SERVICE_ID      = 'service_pezhtb9';
+    const SERVICE_ID      = 'service_g3p5fhe';
     const TEMPLATE_OWNER  = 'template_k1amlvp';
     const TEMPLATE_CLIENT = 'template_7ndabyk';
     const PUBLIC_KEY      = 'BKgJHsncI3KYNK1jd';
